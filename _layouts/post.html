@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h4><hr />{{ page.title }}<hr /></h4>
+
+<author>{% if page.author %} Author: <a href="https://mr-irrationality.github.io/">{{page.author}}</a>{% endif %}</author>
+<br>
+<time>{{ page.date | date: "%b %-d, %Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
+
+{{ content }}
+

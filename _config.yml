@@ -1,0 +1,15 @@
+# Site Settings
+title: Welcome to Dawei Li's Homepage
+email: llldawei@stu.xmu.edu.cn
+description: >
+  A guide to getting started with Jekyll.
+baseurl: ""
+url: "https://Mr-Irrationality.github.io"
+# twitter_username: 
+github_username:  Mr-Irrationality
+# Build Settings
+sass:
+  sass_dir: _sass
+include: ['_pages']
+kramdown:
+  input: GFM

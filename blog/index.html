@@ -1,0 +1,12 @@
+---
+layout: default
+header_margin_top: "20px"
+---
+
+<h2 style="margin-top: {{ page.header_margin_top }}"><hr class="line-above" />Blog<hr class="line-below" /></h2>
+{% for post in site.posts %}
+		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+{% endfor %}
+
+
