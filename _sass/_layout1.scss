@@ -1,14 +1,12 @@
-html {
-	font-size: 100%;
-	height: 100%;
-  }
-
 .mybody {
+	height: 100vh;
+	max-width: 100%;
 	text-align: center;
 	margin: 0 auto;
 	color: $font-color;
 	font-family: $font-style;
-	font-size: 100px;
+	font-size: 19px;
+	font-weight: 400;
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 }
@@ -30,27 +28,28 @@ h1 {
 	}
 }
 h2 {
-	text-align: left;
+	text-align: center;
 	// border-top: 1px solid black;
 	// border-bottom: 1px solid black;
-	padding: 30px 20px 0;
+	// padding: 0px 0px 0;
 	font-size: 2em;
 	color: $heading-font-color;
 	  
 }
 
-.line-above,
-.line-below {
-  width: 800px; /* 可根据需要调整横线的宽度 */
-  margin: 30px 0px; /* 自定义上下间距 */
+.line-above {
+	display: block;
+//   width: $content-width; /* 可根据需要调整横线的宽度 */
+  margin-top: 10px;
+  margin-bottom: 30px; /* 自定义上下间距 */
 //   border: 1px solid #000; /* 可选，设置横线样式 */
 }
-
-.line-adjust {
-	width: 800px; /* 可根据需要调整横线的宽度 */
-	margin: 6px 0px; /* 自定义上下间距 */
-	border: 0.5px solid rgba(184, 175, 175, 0.5);
-  }
+.line-below {
+	display: block;
+//   width: $content-width; /* 可根据需要调整横线的宽度 */
+  margin: 30px auto; /* 自定义上下间距 */
+//   border: 1px solid #000; /* 可选，设置横线样式 */
+}
 
 h4 {
 	font-weight: 500;
@@ -89,17 +88,18 @@ header {
 	top: 50%;
 	left: auto;
 	position: absolute;
-	font-size: 10px;
+	font-size: 2.4em;
 	font-weight: 600;
 	color:#fff;
 }
 
 main {
-	font-size: 100px;
-	padding: 0 5px;
-	text-align: left;
-	max-width: $content-width;
-	margin: 0px auto;
+	padding: 0 0px;
+	// left: 50%;
+	max-width: 56%;
+	margin: 0 auto;
+	text-align: left!important;
+	// margin: 0px auto;
 }
 time {
 	color: #898989;
@@ -116,10 +116,10 @@ author {
 /* Aside */
 
 aside {
-	position: absolute;
+	position: relative;
 	top: 0;
 	right: 0px;
-	margin-top: 10px;
+	margin-top: 0px;
 	width: 100%;
 	height: 60px;
 	z-index: 3;
@@ -144,24 +144,22 @@ aside {
 			-webkit-overflow-scrolling: touch;
 			li {
 				// float: left;
-				// left: 380px;
+		        left: 22%;
 				position: relative;
 				display: inline-block;
 				white-space: normal;
 				a, a:visited {
 					text-decoration: none;
 					display: inline-block;
-					padding: 10px 8px;
+					padding: 10px 4px;
 					font-family:  'Open Sans', sans-serif;
 					font-weight: 600;
 					font-size: 20px;
 					line-height: 20px;
 					margin-top: 0px;
 					margin-bottom: 0px;
-					right: 0px;
 					box-shadow: 0;
 					// color: $link-color;
-					background-color: #333;
 					color: black;
 					opacity: 0.8;
 					&:hover,
@@ -171,6 +169,7 @@ aside {
 					}
 				}
 			}
+
 		}
 		&:after {
 			content: '';
@@ -181,15 +180,16 @@ aside {
 }
 
 .li-new {
-	// float: left;
-	left: 0px;
-	position: absolute;
+	margin-left: 0px;
+	float: left;
+	left: 0;
+	position: relative;
 	display: inline-block;
 	white-space: normal;
 	a, a:visited {
 		text-decoration: none;
 		display: inline-block;
-		// padding: 10px 8px;
+		padding: 10px 8px;
 		font-family:  'Open Sans', sans-serif;
 		font-weight: 600;
 		font-size: 30px;
@@ -209,7 +209,7 @@ aside {
 }
 
 .bkg_color{
-	background-color: transparent;
+	background-color: none;
 }
 
 .bkg_color_scrolled{
@@ -218,17 +218,17 @@ aside {
 	transition: background-color 0.2s ease-out;
 }
 
-
-// footer_home {
-// 	position: fixed;
-// 	bottom: 0;
-// 	right: 0;
-// 	padding: 5px;
-// 	text-align: right;
-// 	font-size: 12px;
-// 	padding: 40px;
-// 	color: royalblue;
-// }
+footer_home {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	// background-color: #f8f8f8;
+	padding: 5px;
+	text-align: right;
+	font-size: 12px;
+	padding: 40px;
+	color: royalblue;
+}
 
 .active {
 	// background: $header;
@@ -245,8 +245,7 @@ aside {
 }
 
 figure {
-	display: block;
-	margin: 10px auto;
+	margin: 10px 0px 20px 20px;
 	// top: 50px;
 	// left: 100px;
 	// right: 50px;
@@ -254,8 +253,8 @@ figure {
 	height: auto;
 }
 .right{
-	// float: auto;
-	margin: 10px 0px 20px 20px;
+	// float: ;
+	margin: 10px auto;
 	width: 250px;
 	height: auto;
 }
@@ -272,7 +271,7 @@ img {
 }
 
 .image_center{
-	display: block;
+	// display: block;
 	margin: auto;
 	width: 80vh;
 	height: auto;
@@ -345,31 +344,41 @@ figure.highlight{
 	display: none;
   }
  
-@media (max-width: 1200px) {
-	// aside{
-	// 	display: none;
-	// }
+@media (max-width: 900px) {
+
+	main {
+		padding: 0 0px;
+		// left: 50%;
+		max-width: 100%;
+		margin: 0 auto;
+		text-align: left!important;
+		// margin: 0px auto;
+	}
+	aside{
+		display: none!important;
+	}
 	.menu-icon {
-      display: none;
+      display: flex;
+	  z-index: 999;
 	}
   
 	.menu {
-	  position: static;
+	  position: absolute;
 	  top: 0px;
-	  left: -200%;
+	  left: -100%;
 	  width: 100%;
 	  height: 50%;
 	  background-color: #333;
-	  display: none; /* 显示抽屉式菜单 */
+	  display: inline-block; /* 显示抽屉式菜单 */
 	  z-index: 3;
-	  visibility: hidden;
+	//   visibility: hidden;
 	  opacity: 1;
 	}
-    new-header {
+    .new-header {
 		background-color: #333;
 		color: #fff;
 		padding: 10px;
-		display: none;
+		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	  }
@@ -459,7 +468,8 @@ figure.highlight{
 .icon.active:after {
 	transform: rotate(-45deg);
 	bottom: 0;
-  }
+  }	
+	
 
 .right{
 	float: none;
@@ -502,44 +512,51 @@ figure.highlight{
   }
   
   
-  .wrapper-footer-yqz {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 20px;
-	background-color: #eee;
-  }
-
-
-  .container-yqz {
-	margin: 0 auto;
-	max-width: 100%;
-	padding: 0 10px;
-	width: 100%;
-  }
-
-  div {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-  }
+// div {
+// 	margin: 0;
+// 	padding: 0;
+// 	border: 0;
+// 	font-size: 100%;
+// 	font: inherit;
+// 	vertical-align: baseline;
+//   }
 
   .wrapper-container {
-	min-height: 100%;
+	min-height: calc(100vh - 100px);
 	position: relative;
 	text-align: center;
-	margin: 0 auto; /* 居中 */
   }
 
-  footer {
+  .wrapper-footer-yqz {
+	// padding: 0px auto;
+	position: absolute;
+	bottom: -100px;
+	width: 100vw;
+	left: 0;
+	height: 60px;
+	background-color: #eee;
+	text-align: center;
+	display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; 
+  }
+
+  .footer {
 	display: block;
 	text-align: center;
 	margin: 0;
-	padding: 0;
+	padding: 0px 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 }
+
+//
+
+
+//   .container-yqz {
+// 	margin: 0 auto;
+// 	max-width: 100%;
+// 	padding: 0 10px;
+// 	width: 100%;
+//   }

@@ -2,7 +2,7 @@
 	<div class="container">
 		<nav>
 			<ul>
-				<li-new><a href="{{ "/" | prepend: site.baseurl }}">Dawei Li</a></li-new>
+				<li class="li-new"><a href="{{ "/" | prepend: site.baseurl }}">Dawei Li</a></li>
 				<li><a href="{{ "/about/" | prepend: site.baseurl }}" {% if page.url ==  "/about/" %} class="active" {% endif %}>About</a></li>
 				<li><a href="{{ "/files/CV.pdf/" | prepend: site.baseurl }}">CV</a></li>
 				<li><a href="{{ "/research/" | prepend: site.baseurl }}" {% if page.url ==  "/research/" %} class="active" {% endif %}>Research</a></li>
@@ -37,12 +37,8 @@
 	</script> -->
 <!-- {% endif %} --> 
 
-<script>
-	const navbar = document.querySelector('.bkg_color');
-	navbar.classList.add('bkg_color_scrolled');
-</script> 
 
-<new-header>
+<div class='new-header'>
 	<div class="menu-icon">
 	  <span class="icon"></span>
 	</div>
@@ -51,11 +47,49 @@
 		<li><a href="{{ "/about/" | prepend: site.baseurl }}" {% if page.url ==  "/about/" %} class="active" {% endif %}>About</a></li>
 		<li><a href="{{ "/files/CV.pdf/" | prepend: site.baseurl }}">CV</a></li>
 		<li><a href="{{ "/research/" | prepend: site.baseurl }}" {% if page.url ==  "/research/" %} class="active" {% endif %}>Research</a></li>
-		<!-- <li><a href="{{ "/publication/" | prepend: site.baseurl }}" {% if page.url ==  "/publication/" %} class="active" {% endif %}>Publication</a></li> -->
 		<li><a href="{{ "/blog/" | prepend: site.baseurl }}" {% if page.url ==  "/blog/" %} class="active" {% endif %}>Blog</a></li>
 		<li><a href="{{ "/gallery/" | prepend: site.baseurl }}" {% if page.url ==  "/gallery/" %} class="active" {% endif %}>Gallery</a></li>
-		<!-- <li><a href="{{ "/comments/" | prepend: site.baseurl }}" {% if page.url ==  "/comments/" %} class="active" {% endif %}>Comments</a></li> -->
 		<li><a href="{{ "/contact/" | prepend: site.baseurl }}" {% if page.url ==  "/contact/" %} class="active" {% endif %}>Contact</a></li>
 	  </ul>
 	</nav>
-  </new-header>
+</div>
+
+<script>// 选择按钮和菜单元素
+	const menuButton = document.querySelector('.menu-icon');
+	const menu = document.querySelector('.menu');
+	const menuIcon = document.getElementById('.menu-icon');
+	let isMenuOpen = false;
+	
+	// 添加点击事件监听器
+	menuButton.addEventListener('click', () => {
+	  if (isMenuOpen) {
+		// 如果菜单已打开，则关闭菜单
+		menu.style.transform = 'translateX(-100%)'; // 向左滑动关闭
+	  } else {
+		// 如果菜单已关闭，则打开菜单
+		menu.style.transform = 'translateX(100%)'; // 向右滑动打开
+	  }
+	  
+	  // 切换菜单状态
+	  isMenuOpen = !isMenuOpen;
+	
+	  // 在这里添加展开或关闭菜单的代码
+	});
+	
+	</script>
+
+	<!-- <script>const menuButton = document.querySelector('.menu-icon');
+		const menu = document.querySelector('.menu');
+		
+		menuButton.addEventListener('click', () => {
+		  menuButton.classList.toggle('active'); // 切换图标的样式
+		
+		  if (menuButton.classList.contains('active')) {
+			// 如果菜单已打开，则关闭菜单
+			menu.style.transform = 'translateX(-100%)'; // 向左滑动关闭
+		  } else {
+			// 如果菜单已关闭，则打开菜单
+			menu.style.transform = 'translateX(100%)'; // 向右滑动打开
+		  }
+		});
+		</script> -->
